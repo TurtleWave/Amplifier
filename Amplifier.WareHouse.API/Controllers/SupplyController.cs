@@ -14,7 +14,7 @@ public class SupplyController: WareHouseBaseController<Supply, SupplyDTO>
     
     #region Inherited endpoints
    
-    [HttpGet("GetProducts")]
+    [HttpGet("GetSupplies")]
     public override async Task<IEnumerable<SupplyDTO>> Get()
     {
         var supplies = _service.Get().Where(s => !s.IsHidden);
@@ -23,14 +23,14 @@ public class SupplyController: WareHouseBaseController<Supply, SupplyDTO>
     }
 
     // ProductDto
-    [HttpPut("UpdateProduct")]
+    [HttpPut("UpdateSupply")]
     public override Task Update(SupplyDTO supplyDto) => base.Update(supplyDto);
 
-    [HttpDelete("DeleteProduct")]
+    [HttpDelete("DeleteSupply")]
     public override Task Delete(int supplyId) => base.Delete(supplyId);
 
     // ProductDto
-    [HttpPost("AddProduct")]
+    [HttpPost("AddSupply")]
     public override Task Add(SupplyDTO supplyDto) => base.Add(supplyDto); 
     
     #endregion
